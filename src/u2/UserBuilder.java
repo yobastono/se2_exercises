@@ -14,28 +14,33 @@ public class UserBuilder {
 
 	public UserBuilder createDefaultUser() {
 		userDto.setUsername("Jonny");
-		return instance;
+		return this;
 	}
 
 	public UserBuilder withNoPassword() {
-		userDto.setPassword("");
-		return instance;
+		userDto.setPasswort("");
+		return this;
 	}
 
 	public UserBuilder and() {
-		return instance;
+		return this;
 	}
 
 	public UserBuilder withUserID(String id) {
 		userDto.setUserId(id);
-		return instance;
+		return this;
 	}
 	
 	public UserBuilder withEmail(String email) {
 		userDto.setEmail(email);
-		return instance;
+		return this;
 	}
-
+	
+	public UserBuilder withMatrLength(String matrNr) {
+		userDto.setMatrNr(matrNr);
+		return this;
+	}
+		
 	public UserDTO done() {
 		return userDto;
 	}
