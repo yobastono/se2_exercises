@@ -11,7 +11,7 @@ public class UserBuilder {
 		}
 		return instance;
 	}
-
+	
 	public UserBuilder createDefaultUser() {
 		userDto.setUsername("Jonny");
 		return this;
@@ -31,7 +31,7 @@ public class UserBuilder {
 		return this;
 	}
 	
-	public UserBuilder withEmail(String email) {
+	public UserBuilder withAlreadyTakenEmail(String email) {
 		userDto.setEmail(email);
 		return this;
 	}
@@ -40,8 +40,18 @@ public class UserBuilder {
 		userDto.setMatrNr(matrNr);
 		return this;
 	}
+
+	public UserBuilder withMinimalAge(int age) {
+		userDto.setAlter(age);
+		return this;
+	}
+	
+	public UserBuilder withWrongFormattedEmail(String email) {
+		userDto.setEmail(email);
+		return this;
+	}
 		
 	public UserDTO done() {
-		return userDto;
+		return this.userDto;
 	}
 }
